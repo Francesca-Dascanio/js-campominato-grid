@@ -45,8 +45,31 @@ header #header-buttons #level, header #header-buttons #button-play {
 
 /* REGOLE MAIN */
 main {
-    height: 80%;
+    height: 80vh;
     background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main #grid {
+    height: 60vh;
+    width: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stile-cella {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.riga-dieci {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
 }
 
 /* REGOLE FOOTER */
