@@ -67,6 +67,14 @@ main #grid {
     font-size: 0.8rem;
 }
 
+
+.clicked {
+    background-color: rgb(24, 68, 187);
+    color: white;
+}
+
+
+/* Dimensioni celle */
 .riga-dieci {
     width: calc(100% / 10);
     height: calc(100% / 10);
