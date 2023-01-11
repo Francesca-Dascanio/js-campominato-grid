@@ -74,11 +74,23 @@ main #grid {
 }
 
 
-/* Dimensioni celle */
+/* Dimensioni celle
 .riga-dieci {
     width: calc(100% / 10);
     height: calc(100% / 10);
 }
+
+.riga-nove {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.riga-sette {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+} */
+
+
 
 /* REGOLE FOOTER */
 footer .footer-container > * {

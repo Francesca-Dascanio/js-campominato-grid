@@ -6,37 +6,40 @@ Ci saranno quindi 10 caselle per ognuna delle 10 righe.                         
 
 Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata. OK
 
+==Bonus==
+Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà: OK
+- con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;               OK
+- con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
+- con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
+
+
 */
 
+
+
 // funzione crea N celle con numero progressivo
-function createCells (min, max, container) {
+function createCells (min, max, container, x) {
 
         //Crea N celle e inseriscile in un contenitore
         for (let i = min; i <= max; i++ ) {
 
-            // Crea nuova cella
+            // Crea una nuova cella
             const cell = document.createElement('div');
 
-            // // Attribuisci al mio nuovo div cella la classe che ne determina le dimensioni --> è giusto ??
             cell.classList.add('stile-cella');
-            cell.classList.add('riga-dieci');
+            cell.style.width =  `calc(100% / ${x})` ;
+            cell.style.height =  `calc(100% / ${x})` ;
             cell.innerHTML = i;
             container.append(cell);
 
 
-            // Al click di ogni cella 
+            // // Al click di ogni cella, la cella si colora di blu
             cell.addEventListener ('click',
             
                 function () {
-
-                    if (this.classList.contains('clicked')) {
-                        this.classList.remove('clicked');
+                    cell.classList.add('clicked');
+                    console.log('Il numero della cella cliccata è: ', i);
                     }
-                    else {
-                        this.classList.add('clicked');
-                        console.log('Il numero della cella cliccata è: ', i);
-                    }
-                }
             
             )
         }
@@ -45,31 +48,55 @@ function createCells (min, max, container) {
     return createCells;
 }
 
-// Quando devo creare griglia? Al click del bottone Play
+// Meglio dividere l'evento al click della singola cella oppure lo posso lasciare dentro alla stessa funzione?
+
+
+
+// Prendo opzione livello
+const sceltaLivello = document.getElementsByTagName('option');
+console.log(sceltaLivello.value);
+
+
 // Prendo bottone Play da HTML
 const buttonPlay = document.getElementById('button-play');
 console.log(buttonPlay);
 
 
+// All'evento clicca il bottone play
 buttonPlay.addEventListener ('click',
 
     function () {
 
-        const myGrid = document.getElementById('grid');
-        console.log(myGrid);
+        if (sceltaLivello.value = 'facile') {
 
-        allCells = createCells (1, 100, myGrid);
-        console.log(allCells);
+            const myGrid = document.getElementById('grid');
+            console.log(myGrid);
+
+            allCells = createCells (1, 100, myGrid, 10);
+
+        }
+
+        else if (sceltaLivello.value = 'media') {
+
+            const myGrid = document.getElementById('grid');
+            console.log(myGrid);
+
+            allCells = createCells (1, 81, myGrid, 9);
+
+        }
+
+        else if (sceltaLivello.value = 'difficile') {
+
+            const myGrid = document.getElementById('grid');
+            console.log(myGrid);
+
+            allCells = createCells (1, 49, myGrid, 7);
+
+        }
 
     }
     // Per fermare il click: posso aggiungere solo 1 volta la griglia --> soluzione temporanea
     , {once : true}
 
 );
-
-
-
-
-
-
 
