@@ -74,7 +74,7 @@ main #grid {
 }
 
 
-/* Dimensioni celle
+/* Dimensioni celle */
 .riga-dieci {
     width: calc(100% / 10);
     height: calc(100% / 10);
@@ -88,7 +88,7 @@ main #grid {
 .riga-sette {
     width: calc(100% / 7);
     height: calc(100% / 7);
-} */
+}
 
 
 

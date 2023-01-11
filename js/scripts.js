@@ -27,8 +27,9 @@ function createCells (min, max, container, x) {
             const cell = document.createElement('div');
 
             cell.classList.add('stile-cella');
-            cell.style.width =  `calc(100% / ${x})` ;
-            cell.style.height =  `calc(100% / ${x})` ;
+            // cell.style.width =  `calc(100% / ${x})` ;
+            // cell.style.height =  `calc(100% / ${x})` ;
+            cell.classList.add(`${x}`);
             cell.innerHTML = i;
             container.append(cell);
 
@@ -74,7 +75,7 @@ buttonPlay.addEventListener ('click',
             const myGrid = document.getElementById('grid');
             console.log(myGrid);
 
-            allCells = createCells (1, 100, myGrid, 10);
+            allCells = createCells (1, 100, myGrid, 'riga-dieci');
 
         }
 
@@ -83,7 +84,7 @@ buttonPlay.addEventListener ('click',
             const myGrid = document.getElementById('grid');
             console.log(myGrid);
 
-            allCells = createCells (1, 81, myGrid, 9);
+            allCells = createCells (1, 81, myGrid, 'riga-nove');
 
         }
 
@@ -92,7 +93,7 @@ buttonPlay.addEventListener ('click',
             const myGrid = document.getElementById('grid');
             console.log(myGrid);
 
-            allCells = createCells (1, 49, myGrid, 7);
+            allCells = createCells (1, 49, myGrid, 'riga-sette');
 
         }
 
