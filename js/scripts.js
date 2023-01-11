@@ -53,7 +53,7 @@ function createCells (min, max, container, x) {
 
 
 // Prendo opzione livello
-const sceltaLivello = document.getElementsByTagName('option');
+const sceltaLivello = document.getElementById('level');
 console.log(sceltaLivello.value);
 
 
@@ -67,7 +67,9 @@ buttonPlay.addEventListener ('click',
 
     function () {
 
-        if (sceltaLivello.value = 'facile') {
+        console.log(sceltaLivello.value);
+
+        if (sceltaLivello.value == 'facile') {
 
             const myGrid = document.getElementById('grid');
             console.log(myGrid);
@@ -76,7 +78,7 @@ buttonPlay.addEventListener ('click',
 
         }
 
-        else if (sceltaLivello.value = 'media') {
+        else if (sceltaLivello.value == 'media') {
 
             const myGrid = document.getElementById('grid');
             console.log(myGrid);
@@ -85,7 +87,7 @@ buttonPlay.addEventListener ('click',
 
         }
 
-        else if (sceltaLivello.value = 'difficile') {
+        else if (sceltaLivello.value == 'difficile') {
 
             const myGrid = document.getElementById('grid');
             console.log(myGrid);
